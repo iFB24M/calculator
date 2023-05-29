@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic');
+
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+}
+body {
+	background-color: #222222;
+}
+
+.calculator {
+	padding: 16px;
+
+	&__result {
+		background-color: #333;
+		padding: 16px;
+		border-radius: 8px;
+		font-size: 30px;
+		font-weight: 700;
+		text-align: right;
+	}
+	&__keyboard {
+		margin: 16px 0;
+		display: flex;
+		gap: 4px;
+		flex-direction: column;
+	}
+	&__row {
+		display: flex;
+		gap: 4px;
+	}
+	&__key {
+		flex-grow: 1;
+
+		background-color: #333;
+		padding: 32px;
+		display: inline-flex;
+		font-size: 24px;
+		border-radius: 8px;
+
+		align-items: center;
+		justify-content: center;
+
+		cursor: pointer;
+
+		&:hover {
+			background-color: #44444490;
+		}
+		&:active {
+			background-color: #44444480;
+		}
+	}
+	&__buttons {
+		display: flex;
+		gap: 4px;
+		flex-wrap: wrap;
+
+		.calculator__key {
+			@for $i from 1 through 4 {
+				&:nth-child(#{$i}) {
+					flex-grow: 1;
+				}
+			}
+			&:last-child {
+				flex-basis: 100%;
+				background-color: hsl(16, 100%, 50%);
+
+				&:hover {
+					background-color: #ff571a;
+				}
+				&:active {
+					background-color: #ff6229;
+				}
+			}
+		}
+	}
+}
